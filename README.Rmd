@@ -1,5 +1,5 @@
 ---
-title: My First git repo
+title: My First git repo (on the main branch)
 author: Hyelim Shin
 output: github_document
 ---
@@ -21,3 +21,7 @@ Here is some final text for my third time.
 # My test branch 
 
 Here is some text that I will commit to the test branch.
+
+# My new_test branch 
+
+Here is some text that I will commit to the new_test branch.
