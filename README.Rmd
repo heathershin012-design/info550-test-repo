@@ -11,6 +11,8 @@ I am now adding a new line to this first commit section of the readme.
 text for another commit.
 text for yet another commit.
 
+__Here is some text on the test branch.__
+
 # My second commit
 
 Here is more text that will be added in my second commit. 
