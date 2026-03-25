@@ -1,0 +1,97 @@
+---
+title: "Baseline and Endline Comparison by Study GroupFeb2026"
+author: "Hyelim Shin"
+date: "2026-02-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+```
+
+```{r}
+df <- read_excel("1Baseline_EndlineFeb2026.xlsx", sheet = "Continuous_BE")
+names(df)
+head(df)
+```
+
+```{r}
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+names(df)
+```
+
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+overall <- df %>%
+  filter(Variable == "OVERALL")
+```
+
+
+```{r}
+names(df)
+
+```
+
+
+```{r}
+overall <- df %>%
+  filter(Variable == "OVERALL") %>%
+  mutate(
+    Parent = ifelse(Parent == "f", "Father", "Mother"),
+    Time   = factor(Time, levels = c("Baseline", "Endline")),
+    star = case_when(
+      p_value < 0.0001 ~ "****",
+      p_value < 0.001  ~ "***",
+      p_value < 0.01   ~ "**",
+      p_value < 0.05   ~ "*",
+      TRUE ~ ""
+    )
+  )
+```
+
+
+```{r}
+# Create long format
+overall_long <- overall %>%
+  pivot_longer(c(mean_ctrl, mean_tx),
+               names_to = "Group",
+               values_to = "Mean") %>%
+  mutate(Group = ifelse(Group == "mean_ctrl",
+                        "Control",
+                        "Intervention"))
+
+# Create star position dataset
+p_pos <- overall %>%
+  mutate(y = pmax(mean_ctrl, mean_tx) + 2) %>%
+  select(Parent, Time, star, y)
+
+# Plot
+ggplot(overall_long, aes(x = Time, y = Mean, fill = Group)) +
+  geom_col(position = "dodge") +
+  facet_wrap(~Parent) +
+  geom_text(aes(label = round(Mean, 1)),
+            position = position_dodge(width = 0.9),
+            vjust = -0.3, size = 3) +
+  geom_text(data = p_pos,
+            aes(x = Time, y = y, label = star),
+            inherit.aes = FALSE,
+            size = 6) +
+  scale_y_continuous(limits = c(0, 70)) +
+  labs(title = "OVERALL: Baseline vs Endline",
+       x = NULL,
+       y = "Mean") +
+  theme_minimal()
+
+
+```

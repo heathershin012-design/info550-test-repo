@@ -1,0 +1,27 @@
+---
+title: "Final Project Report"
+author: "Hyelim Shin"
+date: "2026-03-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+```
+
+#Introduction
+This report analyzes the Sleep Health and Lifestyle dataset.
+
+#Required Table
+```{r, echo=FALSE}
+table1 <- readRDS("output/table1.rds")
+knitr::kable(table1, digits = 2)
+```
+
+
+#Required Figure
+```{r, echo=FALSE}
+knitr::include_graphics("output/figure1.png")
+```
+
+

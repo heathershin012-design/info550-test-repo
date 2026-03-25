@@ -1,0 +1,14 @@
+library(dplyr)
+
+sleep <- read.csv("data/Sleep_Health_and_Lifestyle_dataset.csv")
+
+str(sleep)
+
+sleep <- sleep %>%
+  mutate(
+    across(where(is.character), trimws)
+  )
+
+saveRDS(sleep, "output/data_clean.rds")
+
+

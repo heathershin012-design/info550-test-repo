@@ -1,0 +1,13 @@
+"0","baseline <- read_excel(""Baseline_EndlineFeb2026.xlsx"", sheet =""Baseline Continuous"")"
+"0","endline <- read_excel(""Baseline_EndlineFeb2026.xlsx"", sheet = ""Endline Continous"" )"
+"0",""
+"0","baseline <- baseline %>%"
+"0","  mutate(Time = ""Baseline"")"
+"0",""
+"0","endline <- endline %>%"
+"0","  mutate(Time = ""Endline"")"
+"0",""
+"0","left_join() <- bind_rows(baseline, endline)"
+"2","Error in left_join() <- bind_rows(baseline, endline) : 
+  invalid (NULL) left side of assignment
+"
