@@ -1,3 +1,0 @@
-"0","table1 <- readRDS(""output/table1.rds"")"
-"2","Error in gzfile(file, ""rb"") : cannot open the connection
-"

@@ -1,2 +1,0 @@
-"0","table1 <- readRDS(""output/table1.rds"")"
-"0","knitr::kable(table1, digits = 2)"
