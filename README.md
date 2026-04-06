@@ -22,5 +22,13 @@ To generate the full report, run:
 
 ```bash
 make
+```
 
+
+## Package setup
+
+To restore the project package environment, run:
+
+```bash
+make install
 

@@ -5,3 +5,7 @@ report/Final_project_report.html: code/01_clean_data.R code/02_make_table.R code
 	Rscript code/04_render_report.R
 
 all: report/Final_project_report.html
+
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"
