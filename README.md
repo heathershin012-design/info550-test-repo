@@ -32,3 +32,10 @@ To restore the project package environment, run:
 ```bash
 make install
 
+
+## Package setup
+
+To restore the project package environment, run:
+
+```bash
+make install
