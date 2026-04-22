@@ -1,4 +1,4 @@
-IMAGE_NAME=heathershin012-design/finalproject6
+IMAGE_NAME=heathershin012/finalproject6
 CONTAINER_REPORT_DIR=/home/rstudio/project/report
 
 .PHONY: all install report docker-build docker-run docker-run-windows
