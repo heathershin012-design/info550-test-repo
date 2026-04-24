@@ -19,4 +19,4 @@ docker-build:
 
 docker_report:
 	mkdir -p report
-	docker run --rm -v "$$(pwd)/report:/finalproject6/" finalproject6
+	docker run --rm -v "$$(pwd)/report:/finalproject6/" heathershin012/finalproject6
