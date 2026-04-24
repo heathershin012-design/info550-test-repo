@@ -24,22 +24,39 @@ To generate the full report locally, run:
 make
 ```
 
+
 # how to build the Docker image 
 
-1.build docker image(terminal): 
+build docker image(terminal): 
+
+Run the following command in the terminal:  
 
 docker build -t heathershin012/finalproject6 .
 
 make sure you put your Dockerhub username+image name 
 
 
-2. Run Container (Mac): 
+## Run the project(mac)
 
-make docker-fun
+To generate the report:
 
-docker run -it -v "$(pwd)/final_report":/project/final_report project_imagebash
+make docker_report
 
-3. push to Dockhub
+The compiled report will be saved in the `report/` folder.
+
+Mac: docker run -it -v "$(pwd)/final_report":/project/final_report project_imagebash
+
+###Push to Dockhub
 
 docker push heathershin012/finalproject6:latest
+
+###Push to Github
+To upload your project to GitHub, run the following commands in your project directory:
+
+```bash
+git add .
+git commit -m "Final project submission"
+git push origin main
+```
+git remote add origin https://github.com/heathershin012/finalproject6.git 
 

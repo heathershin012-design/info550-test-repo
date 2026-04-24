@@ -15,12 +15,8 @@ install:
 	Rscript -e "renv::restore(prompt = FALSE)"
 
 docker-build:
-	docker build -t $(IMAGE_NAME) .
+	docker build -t $finalproject6 .
 
-docker-run:
+docker_report:
 	mkdir -p report
-	docker run --rm -v "$$(pwd)/report:$(CONTAINER_REPORT_DIR)" $(IMAGE_NAME)
-
-docker-run-windows:
-	mkdir -p report
-	docker run --rm -v "//$$(pwd)/report:$(CONTAINER_REPORT_DIR)" $(IMAGE_NAME)
+	docker run --rm -v "$$(pwd)/report:/finalproject6/" finalproject6
