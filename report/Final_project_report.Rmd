@@ -14,14 +14,14 @@ This report analyzes the Sleep Health and Lifestyle dataset.
 
 #Required Table
 ```{r, echo=FALSE}
-table1 <- readRDS("output/table1.rds")
+table1 <- readRDS("../output/table1.rds")
 knitr::kable(table1, digits = 2)
 ```
 
 
 #Required Figure
 ```{r, echo=FALSE}
-knitr::include_graphics("output/figure1.png")
+knitr::include_graphics("../output/figure1.png")
 ```
 
 
