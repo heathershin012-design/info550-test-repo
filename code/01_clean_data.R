@@ -14,4 +14,4 @@ sleep <- sleep %>%
 colSums(is.na(sleep))
 
 # Save cleaned data
-saveRDS(sleep, "output/sleep_clean.rds")
+saveRDS(sleep, "output/data_clean.rds")
